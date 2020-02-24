@@ -31,6 +31,6 @@ public class Player {
 
     public String toString()
     {
-        return "Jersey number: "+playerJerseyNumber+ ",  Rating:"+playerRanking;
+        return "Jersey number: "+playerJerseyNumber+ ",  Rating: "+playerRanking;
     }
 }
