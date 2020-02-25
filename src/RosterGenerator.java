@@ -16,6 +16,7 @@ public class RosterGenerator {
         int temp;
         int i;
         char menuChar = 'b';
+        int newRating;
 
         Scanner read = new Scanner(System.in);
 
@@ -56,8 +57,29 @@ public class RosterGenerator {
                             System.out.println("Player " + (i + 1) + " -- Jersey number: " + jerseyNumber[i] + ", Rating: " + rating[i]);
                         }
                     }
-
                     break;
+
+                case 'u':
+
+                    System.out.print("Enter a jersey number: ");
+
+                    int playerJersey = read.nextInt();
+
+                    System.out.print("Enter a new rating for player:");
+
+                    newRating = read.nextInt();
+
+                    for(i =0;i<5;i++){
+
+                        if (jerseyNumber[i] == playerJersey) {
+
+                            rating[i] = newRating;
+
+                            break;
+
+                        }
+
+                    }
             }
         }
     }
