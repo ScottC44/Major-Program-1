@@ -16,6 +16,9 @@ public class RosterGenerator {
 
         int temp;
         int i;
+        char menuChar = 'b';
+
+
 
         Scanner read = new Scanner(System.in);
 
@@ -30,5 +33,18 @@ public class RosterGenerator {
             temp = read.nextInt();
             rating[i-1] = temp;
         }
+
+        while (menuChar != 'q') {
+
+            System.out.println("MENU");
+            System.out.println("u - Update player rating");
+            System.out.println("a - Output players above a rating");
+            System.out.println("r - Replace player");
+            System.out.println("o - Output roster");
+            System.out.println("q - Quit");
+            System.out.println("");
+            System.out.println("Choose an option:");
+
+            menuChar = read.next().charAt(0);
     }
 }
