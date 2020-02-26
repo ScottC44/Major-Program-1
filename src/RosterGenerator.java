@@ -15,7 +15,7 @@ public class RosterGenerator {
 
         int temp;
         int i;
-        char menuChar = 'b';
+        char menuChar = '.';
         int newRating;
 
         Scanner read = new Scanner(System.in);
@@ -69,7 +69,7 @@ public class RosterGenerator {
 
                     newRating = read.nextInt();
 
-                    for(i =0;i<5;i++){
+                    for (i = 0; i < 5; i++) {
 
                         if (jerseyNumber[i] == playerJersey) {
 
@@ -90,11 +90,61 @@ public class RosterGenerator {
 
                         if (rating[i] > aboveRating) {
 
-                            System.out.println("Player " + (i + 1)  + " -- Jersey number: "
+                            System.out.println("Player " + (i + 1) + " -- Jersey number: "
                                     + jerseyNumber[i] + ", Rating: " + rating[i]);
                         }
                     }
                     break;
+
+                case 'r':
+
+                    boolean flag = true;
+                    int tempJersey;
+                    int tempRating;
+
+                    while (flag) {
+
+                        System.out.print("Enter a jersey number: ");
+
+                        playerJersey = read.nextInt();
+
+                        System.out.print("Enter a new jersey number: ");
+
+                        int playerNewJersey = read.nextInt();
+
+                        System.out.print("Enter a new rating for player:");
+
+                        newRating = read.nextInt();
+
+
+                        for (i = 0; i < 5; i++) {
+
+                            if ((jerseyNumber[i] == playerJersey)) {
+
+                                tempJersey = jerseyNumber[i];
+                                jerseyNumber[i] = playerNewJersey;
+                                if(playerNewJersey >99 || playerNewJersey <0){
+                                    flag =false;
+                                    System.out.println("Error: Invalid Jersey Number...\n Try Again...");
+                                    jerseyNumber[i] = tempJersey;
+                                    break;
+                                }
+
+                                tempRating = rating[i];
+                                rating[i] = newRating;
+                                if(newRating>9 || newRating <0){
+                                    flag = false;
+                                    System.out.println("Error: Invalid Rating...\n Try Again...");
+                                    rating[i] = tempRating;
+                                    jerseyNumber[i] = tempJersey;
+
+                                    break;
+                                }
+                                flag = false;
+                                break;
+                            }
+                        }
+                    }
             }
         }
     }
