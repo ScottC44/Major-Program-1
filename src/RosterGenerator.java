@@ -76,10 +76,25 @@ public class RosterGenerator {
                             rating[i] = newRating;
 
                             break;
-
                         }
-
                     }
+                    break;
+
+                case 'a':
+
+                    System.out.print("Enter a rating:");
+
+                    int aboveRating = read.nextInt();
+
+                    for (i = 0; i < 5; i++) {
+
+                        if (rating[i] > aboveRating) {
+
+                            System.out.println("Player " + (i + 1)  + " -- Jersey number: "
+                                    + jerseyNumber[i] + ", Rating: " + rating[i]);
+                        }
+                    }
+                    break;
             }
         }
     }
